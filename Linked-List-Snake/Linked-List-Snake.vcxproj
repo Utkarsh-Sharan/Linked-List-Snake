@@ -134,6 +134,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\Level\LevelController.cpp" />
+    <ClCompile Include="source\Level\LevelModel.cpp" />
+    <ClCompile Include="source\Level\LevelService.cpp" />
+    <ClCompile Include="source\Level\LevelView.cpp" />
     <ClCompile Include="source\Time\TimeService.cpp" />
     <ClCompile Include="source\UI\Credits\CreditsScreenUIController.cpp" />
     <ClCompile Include="source\UI\Instructions\InstructionsScreenUIController.cpp" />
@@ -148,29 +152,37 @@
     <ClCompile Include="source\Global\ServiceLocator.cpp" />
     <ClCompile Include="source\Sound\SoundService.cpp" />
     <ClCompile Include="source\UI\SplashScreen\SplashScreenUIController.cpp" />
+    <ClCompile Include="source\UI\UIElement\RectangleShapeView.cpp" />
     <ClCompile Include="source\UI\UIElement\TextView.cpp" />
     <ClCompile Include="source\UI\UIService.cpp" />
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\Time\TimeService.h" />
-    <ClInclude Include="header\UI\Credits\CreditsScreenUIController.h" />
-    <ClInclude Include="header\UI\Instructions\InstructionsScreenUIController.h" />
-    <ClInclude Include="header\UI\UIElement\AnimatedImageView.h" />
-    <ClInclude Include="header\UI\UIElement\ButtonView.h" />
-    <ClInclude Include="header\Global\Config.h" />
-    <ClInclude Include="header\Event\EventService.h" />
-    <ClInclude Include="header\Main\GameService.h" />
-    <ClInclude Include="header\Graphics\GraphicService.h" />
-    <ClInclude Include="header\UI\UIElement\ImageView.h" />
-    <ClInclude Include="header\UI\Interface\IUIController.h" />
-    <ClInclude Include="header\UI\MainMenu\MainMenuUIController.h" />
-    <ClInclude Include="header\Global\ServiceLocator.h" />
-    <ClInclude Include="header\Sound\SoundService.h" />
-    <ClInclude Include="header\UI\SplashScreen\SplashScreenUIController.h" />
-    <ClInclude Include="header\UI\UIElement\TextView.h" />
-    <ClInclude Include="header\UI\UIService.h" />
-    <ClInclude Include="header\UI\UIElement\UIView.h" />
+    <ClInclude Include="include\Level\LevelController.h" />
+    <ClInclude Include="include\Level\LevelData.h" />
+    <ClInclude Include="include\Level\LevelModel.h" />
+    <ClInclude Include="include\Level\LevelNumber.h" />
+    <ClInclude Include="include\Level\LevelService.h" />
+    <ClInclude Include="include\Level\LevelView.h" />
+    <ClInclude Include="include\Time\TimeService.h" />
+    <ClInclude Include="include\UI\Credits\CreditsScreenUIController.h" />
+    <ClInclude Include="include\UI\Instructions\InstructionsScreenUIController.h" />
+    <ClInclude Include="include\UI\UIElement\AnimatedImageView.h" />
+    <ClInclude Include="include\UI\UIElement\ButtonView.h" />
+    <ClInclude Include="include\Global\Config.h" />
+    <ClInclude Include="include\Event\EventService.h" />
+    <ClInclude Include="include\Main\GameService.h" />
+    <ClInclude Include="include\Graphics\GraphicService.h" />
+    <ClInclude Include="include\UI\UIElement\ImageView.h" />
+    <ClInclude Include="include\UI\Interface\IUIController.h" />
+    <ClInclude Include="include\UI\MainMenu\MainMenuUIController.h" />
+    <ClInclude Include="include\Global\ServiceLocator.h" />
+    <ClInclude Include="include\Sound\SoundService.h" />
+    <ClInclude Include="include\UI\SplashScreen\SplashScreenUIController.h" />
+    <ClInclude Include="include\UI\UIElement\RectangleShapeView.h" />
+    <ClInclude Include="include\UI\UIElement\TextView.h" />
+    <ClInclude Include="include\UI\UIService.h" />
+    <ClInclude Include="include\UI\UIElement\UIView.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
