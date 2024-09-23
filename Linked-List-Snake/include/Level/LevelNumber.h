@@ -7,9 +7,4 @@ namespace Level
 		ONE,
 		TWO
 	};
-
-	class LevelModel
-	{
-
-	};
 }
