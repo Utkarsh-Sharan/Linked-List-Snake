@@ -134,6 +134,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\Level\LevelController.cpp" />
+    <ClCompile Include="source\Level\LevelModel.cpp" />
+    <ClCompile Include="source\Level\LevelService.cpp" />
+    <ClCompile Include="source\Level\LevelView.cpp" />
     <ClCompile Include="source\Time\TimeService.cpp" />
     <ClCompile Include="source\UI\Credits\CreditsScreenUIController.cpp" />
     <ClCompile Include="source\UI\Instructions\InstructionsScreenUIController.cpp" />
@@ -153,6 +157,10 @@
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="header\Level\LevelController.h" />
+    <ClInclude Include="header\Level\LevelModel.h" />
+    <ClInclude Include="header\Level\LevelService.h" />
+    <ClInclude Include="header\Level\LevelView.h" />
     <ClInclude Include="header\Time\TimeService.h" />
     <ClInclude Include="header\UI\Credits\CreditsScreenUIController.h" />
     <ClInclude Include="header\UI\Instructions\InstructionsScreenUIController.h" />
