@@ -2,8 +2,10 @@
 
 #include "Player/BodyPart.h"
 
-namespace Player
+namespace LinkedList
 {
+	using namespace Player;
+
 	struct Node
 	{
 		BodyPart body_part;
