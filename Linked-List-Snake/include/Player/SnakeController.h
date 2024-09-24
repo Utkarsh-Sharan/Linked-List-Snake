@@ -1,6 +1,8 @@
 #pragma once
 
 #include"Player/Direction.h"
+#include "LinkedList/SingleLinkedList.h"
+
 #include <SFML/Graphics.hpp>
 
 namespace Player
@@ -21,6 +23,10 @@ namespace Player
 
 		Direction current_snake_direction;
 		SnakeState current_snake_state;
+
+		LinkedList::SingleLinkedList* single_linked_list;
+
+		void createLinkedList();
 
 		void processPlayerInput();
 		void updateSnakeDirection();
