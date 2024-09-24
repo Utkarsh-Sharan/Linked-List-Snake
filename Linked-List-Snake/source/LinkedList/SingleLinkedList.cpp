@@ -23,7 +23,7 @@ namespace LinkedList
 
 	void SingleLinkedList::render() 
 	{ 
-
+		head_node->body_part.render();
 	}
 
 	void SingleLinkedList::createHeadNode()
