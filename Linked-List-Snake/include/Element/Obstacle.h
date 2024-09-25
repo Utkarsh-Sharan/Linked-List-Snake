@@ -1,0 +1,30 @@
+#pragma once
+
+#include "UI/UIElement/ImageView.h"
+
+namespace Element
+{
+	class Obstacle
+	{
+	private:
+		UI::UIElement::ImageView* obstacle_image;
+
+		sf::Vector2i grid_position;
+
+		float cell_width;
+		float cell_height;
+
+		void initializeObstacleImage();
+		sf::Vector2f getObstacleImagePosition();
+
+		void destroy();
+
+	public:
+		Obstacle();
+		~Obstacle();
+
+		void initialize(sf::Vector2i grid_pos, float width, float height);
+		void update();
+		void render();
+	};
+}

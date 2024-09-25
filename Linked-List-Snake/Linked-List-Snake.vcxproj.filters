@@ -99,6 +99,9 @@
     <ClCompile Include="source\LinkedList\SingleLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Element\Obstacle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Level\LevelController.h">
@@ -195,6 +198,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\LinkedList\SingleLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Element\ElementData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Element\Obstacle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
