@@ -47,6 +47,35 @@ namespace Player
 		}
 	}
 
+	void SnakeController::processPlayerInput() 
+	{ 
+		if (input_state == InputState::PROCESSING) 
+			return;
+
+		EventService* event_service = ServiceLocator::getInstance()->getEventService();
+
+		if (event_service->pressedUpArrowKey() && current_snake_direction != Direction::DOWN)
+		{
+			current_snake_direction = Direction::UP;
+			input_state = InputState::PROCESSING;
+		}
+		else if (event_service->pressedDownArrowKey() && current_snake_direction != Direction::UP)
+		{
+			current_snake_direction = Direction::DOWN;
+			input_state = InputState::PROCESSING;
+		}
+		else if (event_service->pressedLeftArrowKey() && current_snake_direction != Direction::RIGHT)
+		{
+			current_snake_direction = Direction::LEFT;
+			input_state = InputState::PROCESSING;
+		}
+		else if (event_service->pressedRightArrowKey() && current_snake_direction != Direction::LEFT)
+		{
+			current_snake_direction = Direction::RIGHT;
+			input_state = InputState::PROCESSING;
+		}
+	}
+
 	void SnakeController::delayedUpdate()
 	{
 		elapsed_duration += ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
@@ -57,30 +86,11 @@ namespace Player
 			updateSnakeDirection();
 			processSnakeCollision();
 
-			if(current_snake_state == SnakeState::ALIVE)
+			if (current_snake_state == SnakeState::ALIVE)
+			{
 				moveSnake();
-		}
-	}
-
-	void SnakeController::processPlayerInput() 
-	{ 
-		EventService* event_service = ServiceLocator::getInstance()->getEventService();
-
-		if (event_service->pressedUpArrowKey() && current_snake_direction != Direction::DOWN)
-		{
-			current_snake_direction = Direction::UP;
-		}
-		else if (event_service->pressedDownArrowKey() && current_snake_direction != Direction::UP)
-		{
-			current_snake_direction = Direction::DOWN;
-		}
-		else if (event_service->pressedLeftArrowKey() && current_snake_direction != Direction::RIGHT)
-		{
-			current_snake_direction = Direction::LEFT;
-		}
-		else if (event_service->pressedRightArrowKey() && current_snake_direction != Direction::LEFT)
-		{
-			current_snake_direction = Direction::RIGHT;
+				input_state = InputState::WAITING;
+			}
 		}
 	}
 
@@ -138,6 +148,7 @@ namespace Player
 		current_snake_direction = default_direction;
 		elapsed_duration = 0.f;
 		restart_counter = 0.f;
+		input_state = InputState::WAITING;
 	}
 
 	void SnakeController::setSnakeState(SnakeState state)
