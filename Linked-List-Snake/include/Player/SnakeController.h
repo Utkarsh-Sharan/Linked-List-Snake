@@ -17,8 +17,12 @@ namespace Player
 	{
 	private:
 		const int initial_snake_length = 10;
+
 		const float movement_frame_duration = 0.1f;
 		float elapsed_duration = 0.f;
+
+		const float restart_duration = 2.f;
+		float restart_counter = 0.f;
 
 		const sf::Vector2i default_position = sf::Vector2i(25, 13);
 		const Direction default_direction = Direction::RIGHT;
