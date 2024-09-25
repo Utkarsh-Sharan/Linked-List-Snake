@@ -15,6 +15,7 @@ namespace Level
         void createLevelController();
         void spawnLevelElements(LevelNumber level_to_load);
         void spawnPlayer();
+        void spawnFood();
         void destroy();
 
     public:
