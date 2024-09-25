@@ -3,6 +3,9 @@
 #include "Level/LevelNumber.h"
 #include "Element/ElementData.h"
 
+#include <vector>
+#include <SFML/System/Vector2.hpp>
+
 namespace Level
 {
     struct LevelData
