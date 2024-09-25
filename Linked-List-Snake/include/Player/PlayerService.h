@@ -1,5 +1,8 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+#include <vector>
+
 namespace Player
 {
 	class SnakeController;
