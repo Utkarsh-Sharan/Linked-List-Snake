@@ -163,6 +163,7 @@
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Element\ElementData.h" />
     <ClInclude Include="include\Level\LevelController.h" />
     <ClInclude Include="include\Level\LevelData.h" />
     <ClInclude Include="include\Level\LevelModel.h" />

@@ -197,5 +197,8 @@
     <ClInclude Include="include\LinkedList\SingleLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Element\ElementData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
