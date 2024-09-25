@@ -13,6 +13,9 @@ namespace Food
 	private:
 		FoodItem* current_food_item;
 
+		std::default_random_engine random_engine;
+		std::random_device random_device;
+
 		float cell_width;
 		float cell_height;
 
@@ -30,5 +33,6 @@ namespace Food
 		void render();
 
 		void startFoodSpawning();
+		sf::Vector2i getRandomPosition();
 	};
 }

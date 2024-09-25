@@ -11,7 +11,7 @@ namespace Food
 	using namespace Level;
 	using namespace Player;
 
-	FoodService::FoodService()
+	FoodService::FoodService() : random_engine(random_device())
 	{
 		current_food_item = nullptr;
 	}
@@ -55,6 +55,18 @@ namespace Food
 	{
 		if (current_food_item) 
 			current_food_item->render();
+	}
+
+	sf::Vector2i FoodService::getRandomPosition()
+	{
+		// Coordinate distribution for selecting a random position for food
+		std::uniform_int_distribution<int> x_distribution(0, LevelModel::number_of_columns - 1);
+		std::uniform_int_distribution<int> y_distribution(0, LevelModel::number_of_rows - 1);
+
+		int x_position = x_distribution(random_engine);
+		int y_position = y_distribution(random_engine);
+
+		return sf::Vector2i(x_position, y_position);
 	}
 
 	void FoodService::destroyFood()

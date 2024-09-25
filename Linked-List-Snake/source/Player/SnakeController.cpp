@@ -30,6 +30,7 @@ namespace Player
 		float height = ServiceLocator::getInstance()->getLevelService()->getCellHeight();
 
 		single_linked_list->initialize(width, height, default_position, default_direction);
+		reset();
 	}
 
 	void SnakeController::update()
@@ -142,15 +143,6 @@ namespace Player
 		spawnSnake();
 	}
 
-	void SnakeController::reset() 
-	{
-		current_snake_state = SnakeState::ALIVE;
-		current_snake_direction = default_direction;
-		elapsed_duration = 0.f;
-		restart_counter = 0.f;
-		input_state = InputState::WAITING;
-	}
-
 	void SnakeController::setSnakeState(SnakeState state)
 	{
 		current_snake_state = state;
@@ -159,6 +151,20 @@ namespace Player
 	SnakeState SnakeController::getSnakeState()
 	{
 		return current_snake_state;
+	}
+
+	std::vector<sf::Vector2i> SnakeController::getCurrentSnakePositionList()
+	{
+		return single_linked_list->getNodesPositionList();
+	}
+
+	void SnakeController::reset()
+	{
+		current_snake_state = SnakeState::ALIVE;
+		current_snake_direction = default_direction;
+		elapsed_duration = 0.f;
+		restart_counter = 0.f;
+		input_state = InputState::WAITING;
 	}
 
 	void SnakeController::destroy()
