@@ -1,5 +1,8 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+#include <vector>
+
 namespace Player
 {
 	class SnakeController;
@@ -20,5 +23,6 @@ namespace Player
 		void render();
 
 		void spawnPlayer();
+		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 	};
 }

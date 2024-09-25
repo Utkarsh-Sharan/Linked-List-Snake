@@ -53,6 +53,11 @@ namespace Element
 		obstacle_image->render();
 	}
 
+	sf::Vector2i Obstacle::getObstaclePosition()
+	{
+		return grid_position;
+	}
+
 	void Obstacle::destroy()
 	{
 		obstacle_image = nullptr;

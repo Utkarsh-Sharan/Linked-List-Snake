@@ -13,11 +13,19 @@ namespace Food
 	private:
 		FoodItem* current_food_item;
 
+		std::default_random_engine random_engine;
+		std::random_device random_device;
+
 		float cell_width;
 		float cell_height;
 
 		FoodItem* createFood(sf::Vector2i position, FoodType type);
 		void spawnFood();
+
+		FoodType getRandomFoodType();
+		sf::Vector2i getValidSpawnPosition();
+
+		bool isValidPosition(std::vector<sf::Vector2i> position_data, sf::Vector2i food_position);
 
 		void destroyFood();
 
@@ -30,5 +38,6 @@ namespace Food
 		void render();
 
 		void startFoodSpawning();
+		sf::Vector2i getRandomPosition();
 	};
 }
