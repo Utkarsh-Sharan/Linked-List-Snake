@@ -20,6 +20,8 @@ namespace LinkedList
 
 		Node* createNode();
 
+		void removeNodeAtHead();
+
 	public:
 		SingleLinkedList();
 		~SingleLinkedList();
@@ -33,5 +35,6 @@ namespace LinkedList
 		void updateNodePosition();
 
 		bool processNodeCollision();
+		void removeAllNodes();
 	};
 }

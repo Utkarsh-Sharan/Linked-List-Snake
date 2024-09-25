@@ -130,4 +130,23 @@ namespace LinkedList
 
 		return false;
 	}
+
+	void SingleLinkedList::removeAllNodes()
+	{
+		if (head_node == nullptr) return;
+
+		while (head_node != nullptr)
+		{
+			removeNodeAtHead();
+		}
+	}
+
+	void SingleLinkedList::removeNodeAtHead()
+	{
+		Node* cur_node = head_node;
+		head_node = head_node->next;
+
+		cur_node->next = nullptr;
+		delete (cur_node);
+	}
 }
