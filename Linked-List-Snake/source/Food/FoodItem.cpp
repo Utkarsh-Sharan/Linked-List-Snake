@@ -21,15 +21,6 @@ namespace Food
 		delete(food_image);
 	}
 
-	void FoodItem::initializeFoodImage()
-	{
-		sf::String food_texture_path = getFoodTexturePath();
-		sf::Vector2f screen_position = getFoodImagePosition();
-
-		food_image->initialize(food_texture_path, cell_width, cell_height, screen_position);
-		food_image->show();
-	}
-
 	void FoodItem::initialize(sf::Vector2i grid_pos, float width, float height, FoodType type)
 	{
 		grid_position = grid_pos;
@@ -38,6 +29,15 @@ namespace Food
 		food_type = type;
 
 		initializeFoodImage();
+	}
+
+	void FoodItem::initializeFoodImage()
+	{
+		sf::String food_texture_path = getFoodTexturePath();
+		sf::Vector2f screen_position = getFoodImagePosition();
+
+		food_image->initialize(food_texture_path, cell_width, cell_height, screen_position);
+		food_image->show();
 	}
 
 	void FoodItem::update()
@@ -86,6 +86,11 @@ namespace Food
 		float screen_position_y = LevelView::border_offset_top + (cell_height * grid_position.y);
 
 		return sf::Vector2f(screen_position_x, screen_position_y);
+	}
+
+	sf::Vector2i FoodItem::getFoodPosition()
+	{
+		return grid_position;
 	}
 
 	FoodType FoodItem::getFoodType()
