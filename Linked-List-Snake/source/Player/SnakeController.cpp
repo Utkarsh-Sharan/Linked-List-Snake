@@ -1,4 +1,5 @@
 #include "Player/SnakeController.h"
+#include "Element/ElementService.h"
 #include "Global/ServiceLocator.h"
 
 namespace Player
@@ -7,6 +8,7 @@ namespace Player
 	using namespace Global;
 	using namespace Event;
 	using namespace Sound;
+	using namespace Element;
 
 	SnakeController::SnakeController()
 	{
@@ -124,7 +126,13 @@ namespace Player
 
 	void SnakeController::processElementsCollision()
 	{
+		ElementService* element_service = ServiceLocator::getInstance()->getElementService();
 
+		if (element_service->processElementsCollision(single_linked_list->getHeadNode()))
+		{
+			current_snake_state = SnakeState::DEAD;
+			ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::DEATH);
+		}
 	}
 
 	void SnakeController::processFoodCollision()
