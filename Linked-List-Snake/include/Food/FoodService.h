@@ -1,4 +1,6 @@
 #pragma once
+
+#include "LinkedList/Node.h"
 #include <SFML/System/Vector2.hpp>
 #include <random>
 #include <vector>
@@ -41,7 +43,6 @@ namespace Food
 		void updateElapsedDuration();
 		void handleFoodSpawning();
 		void reset();
-		void destroyFood();
 
 	public:
 		FoodService();
@@ -53,5 +54,8 @@ namespace Food
 
 		void startFoodSpawning();
 		void stopFoodSpawning();
+
+		bool processFoodCollision(LinkedList::Node* head_node, FoodType& out_food_type);
+		void destroyFood();
 	};
 }
