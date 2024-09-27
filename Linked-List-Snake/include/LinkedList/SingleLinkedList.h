@@ -17,6 +17,8 @@ namespace LinkedList
 	class SingleLinkedList
 	{
 	private:
+		int linked_list_size;
+
 		Node* head_node;
 
 		float node_width;
@@ -38,7 +40,9 @@ namespace LinkedList
 
 		void render();
 
+		void insertNodeAtHead();
 		void insertNodeAtTail();
+
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
 
 		void updateNodeDirection(Direction direction_to_set);
