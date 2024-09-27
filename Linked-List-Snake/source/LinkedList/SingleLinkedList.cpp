@@ -260,6 +260,8 @@ namespace LinkedList
 
 	void SingleLinkedList::removeNodeAtHead()
 	{
+		linked_list_size--;
+
 		Node* cur_node = head_node;
 		head_node = head_node->next;
 
