@@ -298,16 +298,14 @@ namespace LinkedList
 
 		while (cur_node != nullptr && current_index < index)
 		{
-			cur_node = cur_node->next;
 			prev_node = cur_node;
+			cur_node = cur_node->next;
 			current_index++;
 		}
 
 		prev_node->next = cur_node->next;
 
 		shiftNodesAfterRemoval(cur_node);
-
-		cur_node->next = nullptr;
 		delete(cur_node);
 		linked_list_size--;
 	}
@@ -383,18 +381,18 @@ namespace LinkedList
 
 	Node* SingleLinkedList::findNodeAtIndex(int index)
 	{
-		if (index < 0 || index > linked_list_size)
-			return;
-
-		Node* node_at_index = head_node;
 		int current_index = 0;
+		Node* cur_node = head_node;
+		Node* prev_node = nullptr;
 
-		while (node_at_index != nullptr && current_index < index)
+		while (cur_node != nullptr && current_index <= index)
 		{
-			node_at_index = node_at_index->next;
+			prev_node = cur_node;
+			cur_node = cur_node->next;
+			current_index++;
 		}
 
-		return node_at_index;
+		return prev_node;
 	}
 
 	Direction SingleLinkedList::reverse()
