@@ -41,6 +41,7 @@ namespace Player
 
 		void setDirection(Direction direction);
 		Direction getDirection();
+		Direction getPreviousDirection();
 
 		sf::Vector2i getNextPosition();
 		sf::Vector2i getPrevPosition();
