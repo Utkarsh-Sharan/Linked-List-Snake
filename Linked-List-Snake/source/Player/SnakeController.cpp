@@ -147,6 +147,7 @@ namespace Player
 
 			food_service->destroyFood();
 			OnFoodCollected(food_type);
+			player_score++;
 		}
 	}
 
@@ -233,6 +234,11 @@ namespace Player
 		return single_linked_list->getNodesPositionList();
 	}
 
+	int SnakeController::getPlayerScore()
+	{
+		return player_score;
+	}
+
 	void SnakeController::reset()
 	{
 		current_snake_state = SnakeState::ALIVE;
@@ -240,6 +246,7 @@ namespace Player
 		elapsed_duration = 0.f;
 		restart_counter = 0.f;
 		input_state = InputState::WAITING;
+		player_score = 0;
 	}
 
 	void SnakeController::destroy()

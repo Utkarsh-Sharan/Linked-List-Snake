@@ -34,6 +34,8 @@ namespace Player
 		const sf::Vector2i default_position = sf::Vector2i(25, 13);
 		const Direction default_direction = Direction::RIGHT;
 
+		int player_score;
+
 		Direction current_snake_direction;
 		SnakeState current_snake_state;
 		InputState input_state;
@@ -72,5 +74,6 @@ namespace Player
 		SnakeState getSnakeState();
 
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
+		int getPlayerScore();
 	};
 }
