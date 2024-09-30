@@ -20,6 +20,26 @@ namespace Player
 		PROCESSING
 	};
 
+	enum class TimeComplexity
+	{
+		NONE,
+		ONE,
+		N,
+	};
+
+	enum class LinkedListOperations
+	{
+		NONE,
+		INSERT_AT_HEAD,
+		INSERT_AT_TAIL,
+		INSERT_AT_MID,
+		REMOVE_AT_HEAD,
+		REMOVE_AT_TAIL,
+		REMOVE_AT_MID,
+		DELETE_HALF_LIST,
+		REVERSE_LIST,
+	};
+
 	class SnakeController
 	{
 	private:
@@ -39,6 +59,9 @@ namespace Player
 		Direction current_snake_direction;
 		SnakeState current_snake_state;
 		InputState input_state;
+
+		TimeComplexity time_complexity;
+		LinkedListOperations last_linked_list_operation;
 
 		LinkedList::SingleLinkedList* single_linked_list;
 
@@ -75,5 +98,8 @@ namespace Player
 
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 		int getPlayerScore();
+
+		TimeComplexity getTimeComplexity();
+		LinkedListOperations getLastOperation();
 	};
 }
