@@ -28,9 +28,12 @@ namespace LinkedList
 		Player::Direction default_direction;
 
 		Node* createNode();
+
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 		void shiftNodesAfterRemoval(Node* cur_node);
+
 		int findMiddleNode();
+		Node* findNodeAtIndex(int index);
 
 	public:
 		SingleLinkedList();
@@ -52,6 +55,7 @@ namespace LinkedList
 		void removeNodeAtMiddle();
 		void removeNodeAtIndex(int index);
 		void removeNodeAtTail();
+		void removeHalfNodes();
 
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
 
