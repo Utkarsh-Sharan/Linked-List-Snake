@@ -336,6 +336,25 @@ namespace LinkedList
 
 	void SingleLinkedList::removeNodeAtTail()
 	{
+		if (head_node == nullptr) 
+			return;
 
+		Node* cur_node = head_node;
+
+		if (cur_node->next == nullptr) //If only 1 node present
+		{
+			removeNodeAtHead();
+			return;
+		}
+
+		while (cur_node->next->next != nullptr)
+		{
+			cur_node = cur_node->next;
+		}
+
+		delete (cur_node->next);
+		cur_node->next = nullptr;
+
+		linked_list_size--;
 	}
 }
