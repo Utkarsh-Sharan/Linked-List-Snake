@@ -29,6 +29,7 @@ namespace LinkedList
 
 		Node* createNode();
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
+		void shiftNodesAfterRemoval(Node* cur_node);
 		int findMiddleNode();
 
 	public:
@@ -40,12 +41,17 @@ namespace LinkedList
 
 		void render();
 
-		//Operation methods
+		//Insertion operation methods
 		void insertNodeAtHead();
 		void insertNodeAtMiddle();
 		void insertNodeAtIndex(int index);
 		void insertNodeAtTail();
+
+		//Removal operation methods
 		void removeNodeAtHead();
+		void removeNodeAtMiddle();
+		void removeNodeAtIndex(int index);
+		void removeNodeAtTail();
 
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
 
