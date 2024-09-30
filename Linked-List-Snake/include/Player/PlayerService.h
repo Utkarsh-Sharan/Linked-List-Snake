@@ -1,12 +1,11 @@
 #pragma once
 
+#include "Player/SnakeController.h"
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 
 namespace Player
 {
-	class SnakeController;
-
 	class PlayerService
 	{
 	private:

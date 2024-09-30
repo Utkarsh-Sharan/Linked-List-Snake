@@ -273,6 +273,8 @@ namespace Player
 		restart_counter = 0.f;
 		input_state = InputState::WAITING;
 		player_score = 0;
+		time_complexity = TimeComplexity::NONE;
+		last_linked_list_operation = LinkedListOperations::NONE;
 	}
 
 	void SnakeController::destroy()
