@@ -49,7 +49,7 @@ namespace LinkedListLib
 		virtual void removeNodeAtTail() = 0;
 		virtual void removeNodeAtHead() = 0;
 		virtual void removeNodeAtMiddle() = 0;
-		virtual void removeNodeAt(int index) = 0;
+		virtual void removeNodeAtIndex(int index) = 0;
 		virtual void removeAllNodes() = 0;
 		virtual void removeHalfNodes() = 0;
 
