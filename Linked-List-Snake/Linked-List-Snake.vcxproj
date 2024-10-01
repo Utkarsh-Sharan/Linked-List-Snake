@@ -145,7 +145,6 @@
     <ClCompile Include="source\LinkedListLib\DoubleLinked\DoubleLinkedList.cpp" />
     <ClCompile Include="source\LinkedListLib\LinkedList.cpp" />
     <ClCompile Include="source\LinkedListLib\SingleLinked\SingleLinkedList.cpp" />
-    <ClCompile Include="source\LinkedList\SingleLinkedList.cpp" />
     <ClCompile Include="source\Player\BodyPart.cpp" />
     <ClCompile Include="source\Player\PlayerService.cpp" />
     <ClCompile Include="source\Player\SnakeController.cpp" />
