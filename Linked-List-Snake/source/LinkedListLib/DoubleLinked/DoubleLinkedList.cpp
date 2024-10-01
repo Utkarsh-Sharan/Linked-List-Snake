@@ -142,17 +142,72 @@ namespace LinkedListLib
 
 		void DoubleLinkedList::removeNodeAtMiddle()
 		{
+			if (head_node == nullptr)
+			{
+				removeNodeAtHead(); 
+				return;
+			}
 
+			int midIndex = findMiddleNode(); 
+			removeNodeAtIndex(midIndex);
 		}
 
 		void DoubleLinkedList::removeNodeAtIndex(int index)
 		{
+			if (index < 0 || index >= linked_list_size)
+				return;
 
+			if (index == 0)
+			{
+				removeNodeAtHead();
+				return;
+			}
+
+			int current_index = 0;
+			Node* cur_node = head_node;
+			Node* prev_node = nullptr;
+
+			while (cur_node != nullptr && current_index < index)
+			{
+				prev_node = cur_node;
+				cur_node = cur_node->next;
+				current_index++;
+			}
+
+			if(prev_node != nullptr)
+				prev_node->next = cur_node->next;
+
+			if(cur_node->next != nullptr)
+				static_cast<DoubleNode*>(cur_node->next)->previous = prev_node;
+
+			linked_list_size--;
+			shiftNodesAfterRemoval(cur_node);
+
+			cur_node->next = nullptr;
+			static_cast<DoubleNode*>(cur_node)->previous = nullptr;
+			delete(cur_node);
 		}
 
 		void DoubleLinkedList::shiftNodesAfterRemoval(Node* cur_node)
 		{
+			sf::Vector2i prev_node_position = cur_node->body_part.getPosition();
+			Direction prev_node_direction = cur_node->body_part.getDirection();
 
+			cur_node = cur_node->next;
+
+			while (cur_node != nullptr)
+			{
+				sf::Vector2i temp_node_position = cur_node->body_part.getPosition();
+				Direction temp_node_direction = cur_node->body_part.getDirection();
+
+				cur_node->body_part.setPosition(prev_node_position);
+				cur_node->body_part.setDirection(prev_node_direction);
+
+				cur_node = cur_node->next;
+
+				prev_node_position = temp_node_position;
+				prev_node_direction = temp_node_direction;
+			}
 		}
 
 		void DoubleLinkedList::removeNodeAtTail()
@@ -188,7 +243,13 @@ namespace LinkedListLib
 
 		void DoubleLinkedList::removeAllNodes()
 		{
+			if (head_node == nullptr)
+				return;
 
+			while (head_node != nullptr)
+			{
+				removeNodeAtHead();
+			}
 		}
 
 		Direction DoubleLinkedList::reverse()

@@ -120,7 +120,8 @@ namespace LinkedListLib
 
 		void SingleLinkedList::removeAllNodes()
 		{
-			if (head_node == nullptr) return;
+			if (head_node == nullptr) 
+				return;
 
 			while (head_node != nullptr)
 			{
@@ -141,7 +142,8 @@ namespace LinkedListLib
 
 		void SingleLinkedList::removeNodeAtMiddle()
 		{
-			if (head_node == nullptr) {
+			if (head_node == nullptr) 
+			{
 				removeNodeAtHead();             // If the list is empty, remove at the head.
 				return;
 			}
