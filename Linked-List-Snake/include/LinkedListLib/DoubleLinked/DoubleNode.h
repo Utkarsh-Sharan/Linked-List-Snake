@@ -4,7 +4,7 @@
 
 namespace LinkedListLib
 {
-	namespace DoubleNode
+	namespace DoubleLinked
 	{
 		struct DoubleNode : public Node
 		{
