@@ -1,75 +1,41 @@
 #pragma once
 
-#include "LinkedList/Node.h"
+#include "LinkedListLib/Node.h"
+#include "LinkedListLib/LinkedList.h"
 #include "Player/Direction.h"
 
 #include <SFML/System/Vector2.hpp>
 
-namespace LinkedList
+namespace LinkedListLib
 {
-	enum class Operation
+	namespace SingleLinked
 	{
-		HEAD,
-		MID,
-		TAIL
-	};
+		class SingleLinkedList : public LinkedList
+		{
+		protected:
+			Node* createNode() override;
 
-	class SingleLinkedList
-	{
-	private:
-		int linked_list_size;
+		public:
+			SingleLinkedList();
+			~SingleLinkedList();
 
-		Node* head_node;
+			//Insertion operation methods
+			void insertNodeAtHead() override;
+			void insertNodeAtMiddle() override;
+			void insertNodeAtTail() override;
+			void insertNodeAtIndex(int index);
+			void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 
-		float node_width;
-		float node_height;
+			//Removal operation methods
+			void removeNodeAtHead() override;
+			void removeNodeAtMiddle() override;
+			void removeNodeAtTail() override;
+			void removeNodeAtIndex(int index);
+			void removeHalfNodes() override;
+			void removeAllNodes() override;
+			void shiftNodesAfterRemoval(Node* cur_node);
 
-		sf::Vector2i default_position;
-		Player::Direction default_direction;
-
-		Node* createNode();
-
-		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
-		void shiftNodesAfterRemoval(Node* cur_node);
-		void reverseNodeDirections();
-
-		int findMiddleNode();
-		Node* findNodeAtIndex(int index);
-
-		Direction getReverseDirection(Direction direction);
-
-	public:
-		SingleLinkedList();
-		~SingleLinkedList();
-
-		void initialize(float width, float height, sf::Vector2i position, Player::Direction direction);
-		void initializeNode(Node* new_node, Node* reference_node, Operation operation);
-
-		void render();
-
-		//Insertion operation methods
-		void insertNodeAtHead();
-		void insertNodeAtMiddle();
-		void insertNodeAtIndex(int index);
-		void insertNodeAtTail();
-
-		//Removal operation methods
-		void removeNodeAtHead();
-		void removeNodeAtMiddle();
-		void removeNodeAtIndex(int index);
-		void removeNodeAtTail();
-		void removeHalfNodes();
-		Direction reverse();
-
-		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
-
-		void updateNodeDirection(Direction direction_to_set);
-		void updateNodePosition();
-
-		std::vector<sf::Vector2i> getNodesPositionList();
-		Node* getHeadNode();
-
-		bool processNodeCollision();
-		void removeAllNodes();
-	};
+			Direction reverse() override;
+		};
+	}
 }
