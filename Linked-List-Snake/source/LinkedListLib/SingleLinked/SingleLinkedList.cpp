@@ -1,4 +1,5 @@
 #include "LinkedListLib/SingleLinked/SingleLinkedList.h"
+#include "LinkedListLib/SingleLinked/SingleNode.h"
 #include "Player/BodyPart.h"
 #include "Level/LevelView.h"
 
@@ -114,7 +115,7 @@ namespace LinkedListLib
 
 		Node* SingleLinkedList::createNode()
 		{
-			return new Node();
+			return new SingleNode();
 		}
 
 		void SingleLinkedList::removeAllNodes()

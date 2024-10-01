@@ -1,6 +1,5 @@
 #pragma once
 
-#include "LinkedListLib/Node.h"
 #include "LinkedListLib/LinkedList.h"
 #include "Player/Direction.h"
 

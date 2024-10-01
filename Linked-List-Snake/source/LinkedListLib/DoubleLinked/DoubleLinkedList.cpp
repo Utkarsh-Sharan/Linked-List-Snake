@@ -1,4 +1,5 @@
 #include "LinkedListLib/DoubleLinked/DoubleLinkedList.h"
+#include "LinkedListLib/DoubleLinked/DoubleNode.h"
 
 namespace LinkedListLib
 {
@@ -10,7 +11,7 @@ namespace LinkedListLib
 
 		Node* DoubleLinkedList::createNode()
 		{
-			return new Node();
+			return new DoubleNode();
 		}
 
 		void DoubleLinkedList::insertNodeAtHead()

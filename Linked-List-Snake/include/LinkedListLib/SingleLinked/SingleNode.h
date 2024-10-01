@@ -4,7 +4,7 @@
 
 namespace LinkedListLib
 {
-	namespace SingleNode
+	namespace SingleLinked
 	{
 		struct SingleNode : public Node
 		{
