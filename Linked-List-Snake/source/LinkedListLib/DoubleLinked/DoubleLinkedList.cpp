@@ -238,7 +238,25 @@ namespace LinkedListLib
 
 		void DoubleLinkedList::removeHalfNodes()
 		{
+			if (linked_list_size <= 1)
+				return;
 
+			int half_length = linked_list_size / 2;
+			int new_tail_index = half_length - 1;
+
+			Node* prev_node = findNodeAtIndex(new_tail_index);
+			Node* cur_node = prev_node->next;
+
+			while (cur_node != nullptr)
+			{
+				Node* node_to_delete = cur_node;
+				cur_node = cur_node->next;
+
+				delete (node_to_delete);
+				linked_list_size--;
+			}
+
+			prev_node->next = nullptr;
 		}
 
 		void DoubleLinkedList::removeAllNodes()
@@ -254,7 +272,24 @@ namespace LinkedListLib
 
 		Direction DoubleLinkedList::reverse()
 		{
-			return Direction();
+			Node* cur_node = head_node;
+			Node* prev_node = nullptr;
+			Node* next_node = nullptr;
+
+			while (cur_node != nullptr)
+			{
+				next_node = cur_node->next;
+				cur_node->next = prev_node;
+				static_cast<DoubleNode*>(cur_node)->previous = next_node;
+
+				prev_node = cur_node;
+				cur_node = next_node;
+			}
+
+			head_node = prev_node;
+
+			reverseNodeDirections();
+			return head_node->body_part.getDirection();
 		}
 	}
 }
