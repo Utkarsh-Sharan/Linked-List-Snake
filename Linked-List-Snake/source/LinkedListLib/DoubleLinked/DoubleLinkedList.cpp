@@ -37,7 +37,7 @@ namespace LinkedListLib
 
 		void DoubleLinkedList::insertNodeAtMiddle()
 		{
-			if (head_node = nullptr)
+			if (head_node == nullptr)
 			{
 				insertNodeAtHead();
 				return;
