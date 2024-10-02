@@ -253,6 +253,11 @@ namespace Player
 		spawnSnake();
 	}
 
+	bool SnakeController::isSnakeDead()
+	{
+		return current_snake_state == SnakeState::DEAD;
+	}
+
 	void SnakeController::setSnakeState(SnakeState state)
 	{
 		current_snake_state = state;

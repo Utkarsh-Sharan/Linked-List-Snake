@@ -25,6 +25,8 @@ namespace Player
 		void spawnPlayer(Level::LinkedListType linked_list_type);
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 
+		bool isPlayerDead();
+
 		int getPlayerScore();
 
 		TimeComplexity getTimeComplexity();

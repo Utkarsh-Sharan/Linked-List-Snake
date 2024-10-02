@@ -43,6 +43,11 @@ namespace Player
 		snake_controller->spawnSnake();
 	}
 
+	bool PlayerService::isPlayerDead()
+	{
+		return snake_controller->isSnakeDead();
+	}
+
 	int PlayerService::getPlayerScore()
 	{
 		return snake_controller->getPlayerScore();
