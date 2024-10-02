@@ -95,6 +95,8 @@ namespace Player
 		void spawnSnake();
 		void respawnSnake();
 
+		bool isSnakeDead();
+
 		void setSnakeState(SnakeState state);
 		SnakeState getSnakeState();
 
