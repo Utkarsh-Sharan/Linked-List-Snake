@@ -3,6 +3,8 @@
 
 namespace Player
 {
+	using namespace Level;
+
 	PlayerService::PlayerService()
 	{
 		createController();
@@ -35,8 +37,9 @@ namespace Player
 		snake_controller->render();
 	}
 
-	void PlayerService::spawnPlayer()
+	void PlayerService::spawnPlayer(LinkedListType linked_list_type)
 	{
+		snake_controller->createLinkedList(linked_list_type);
 		snake_controller->spawnSnake();
 	}
 

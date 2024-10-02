@@ -66,7 +66,6 @@ namespace Player
 
 		LinkedListLib::LinkedList* linked_list;
 
-		void createLinkedList(Level::LinkedListType linked_list_type);
 		void initializeLinkedList();
 
 		void processPlayerInput();
@@ -88,6 +87,7 @@ namespace Player
 		SnakeController();
 		~SnakeController();
 
+		void createLinkedList(Level::LinkedListType linked_list_type);
 		void initialize();
 		void update();
 		void render();
