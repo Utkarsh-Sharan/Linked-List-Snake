@@ -12,6 +12,7 @@ namespace UI
 		using namespace Global;
 		using namespace Event;
 		using namespace Sound;
+		using namespace Level;
 		using namespace Main;
 
 		LinkedListSelectionUIController::LinkedListSelectionUIController()
@@ -78,14 +79,14 @@ namespace UI
         {
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
             GameService::setGameState(GameState::GAMEPLAY);
-            ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::ONE);
+            ServiceLocator::getInstance()->getLevelService()->createLevel(LinkedListType::SINGLE_LINKED_LIST);
         }
 
         void LinkedListSelectionUIController::doubleLinkedListButtonCallback()
         {
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
             GameService::setGameState(GameState::GAMEPLAY);
-            ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::TWO);
+            ServiceLocator::getInstance()->getLevelService()->createLevel(LinkedListType::DOUBLE_LINKED_LIST);
         }
 
         void LinkedListSelectionUIController::menuButtonCallback()
