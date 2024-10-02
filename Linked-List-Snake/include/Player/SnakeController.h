@@ -2,7 +2,8 @@
 
 #include "Player/Direction.h"
 #include "Food/FoodType.h"
-#include "LinkedList/SingleLinkedList.h"
+#include "Level/LevelConfig.h"
+#include "LinkedListLib/LinkedList.h"
 
 #include <SFML/Graphics.hpp>
 
@@ -63,9 +64,10 @@ namespace Player
 		TimeComplexity time_complexity;
 		LinkedListOperations last_linked_list_operation;
 
-		LinkedList::SingleLinkedList* single_linked_list;
+		LinkedListLib::LinkedList* linked_list;
 
-		void createLinkedList();
+		void createLinkedList(Level::LinkedListType linked_list_type);
+		void initializeLinkedList();
 
 		void processPlayerInput();
 		void delayedUpdate();
