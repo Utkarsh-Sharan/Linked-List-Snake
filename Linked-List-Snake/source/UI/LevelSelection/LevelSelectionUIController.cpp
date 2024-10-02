@@ -1,4 +1,5 @@
 #include "UI/LevelSelection/LevelSelectionUIController.h"
+#include "Level/LevelConfig.h"
 #include "Global/Config.h"
 #include "Global/ServiceLocator.h"
 #include "Main/GameService.h"
@@ -76,15 +77,15 @@ namespace UI
         void LevelSelectionUIController::levelOneButtonCallback()
         {
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
-            GameService::setGameState(GameState::GAMEPLAY);
-            ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::ONE);
+            GameService::setGameState(GameState::LINKED_LIST_SELECTION);
+            //ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::ONE);
         }
 
         void LevelSelectionUIController::levelTwoButtonCallback()
         {
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
-            GameService::setGameState(GameState::GAMEPLAY);
-            ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::TWO);
+            GameService::setGameState(GameState::LINKED_LIST_SELECTION);
+            //ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::TWO);
         }
 
         void LevelSelectionUIController::menuButtonCallback()
