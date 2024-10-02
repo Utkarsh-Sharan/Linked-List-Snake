@@ -32,7 +32,8 @@ namespace LinkedListLib
 
 		void SingleLinkedList::insertNodeAtMiddle()
 		{
-			if (head_node == nullptr) {
+			if (head_node == nullptr) 
+			{
 				insertNodeAtHead();             // If the list is empty, insert at the head.
 				return;
 			}
